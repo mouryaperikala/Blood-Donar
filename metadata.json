@@ -1,0 +1,6 @@
+{
+  "name": "BloodConnect",
+  "description": "Blood Donor Management and Search System connecting patients with verified blood donors through privacy-first consent workflows.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
