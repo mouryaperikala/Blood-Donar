@@ -1,10 +1,10 @@
-import { hashPassword } from './security';
+import { hashPassword } from './security.ts';
 import type {
   AbuseReport,
   ContactRequest,
   DonorRecord,
   EmergencyRequest,
-} from '../src/shared/types';
+} from '../src/shared/types.ts';
 
 export function buildDemoSeedData(): {
   donors: DonorRecord[];

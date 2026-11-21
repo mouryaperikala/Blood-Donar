@@ -2,8 +2,7 @@ import 'dotenv/config';
 import crypto from 'node:crypto';
 import path from 'node:path';
 import express, { type Request, type Response } from 'express';
-import { createServer as createViteServer } from 'vite';
-import { BloodConnectStore, toPrivateDonor, toPublicDonor } from './server/db';
+import { BloodConnectStore, toPrivateDonor, toPublicDonor } from './server/db.ts';
 import {
   cleanString,
   generateTrackingCode,
@@ -17,7 +16,7 @@ import {
   signAuthToken,
   verifyPassword,
   type AuthenticatedRequest,
-} from './server/security';
+} from './server/security.ts';
 import {
   BLOOD_GROUPS,
   filterAndSortDonors,
@@ -29,7 +28,7 @@ import {
   validateContactRequest,
   validateDonorRegistration,
   validateEmergencyRequest,
-} from './src/shared/validation';
+} from './src/shared/validation.ts';
 import type {
   AbuseReport,
   BloodGroup,
@@ -40,7 +39,7 @@ import type {
   EmergencyStatus,
   ReportStatus,
   SystemStats,
-} from './src/shared/types';
+} from './src/shared/types.ts';
 
 async function startServer() {
   const app = express();
@@ -1177,6 +1176,7 @@ async function startServer() {
   // Vite Dev Middleware / Static Production Assets
   // =========================================================
   if (process.env.NODE_ENV !== 'production') {
+    const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',

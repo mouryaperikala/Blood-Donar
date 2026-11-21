@@ -1,6 +1,6 @@
 import crypto from 'node:crypto';
 import type { Request, Response, NextFunction } from 'express';
-import type { UserRole } from '../src/shared/types';
+import type { UserRole } from '../src/shared/types.ts';
 
 // Signing secret from environment with cryptographically random per-process fallback
 const TOKEN_SECRET =

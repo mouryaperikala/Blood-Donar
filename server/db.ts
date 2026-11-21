@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { MongoClient, type Db } from 'mongodb';
-import { buildDemoSeedData } from './seedData';
+import { buildDemoSeedData } from './seedData.ts';
 import type {
   AbuseReport,
   ContactMessage,
@@ -11,7 +11,7 @@ import type {
   DonorRecord,
   EmergencyRequest,
   SearchHistoryItem,
-} from '../src/shared/types';
+} from '../src/shared/types.ts';
 
 export interface AdminConfigRecord {
   id: 'primary-admin';

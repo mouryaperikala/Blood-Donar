@@ -5,7 +5,7 @@ import type {
   DonorPublic,
   DonorSearchFilters,
   Gender,
-} from './types';
+} from './types.ts';
 
 export const BLOOD_GROUPS: BloodGroup[] = [
   'A+',
